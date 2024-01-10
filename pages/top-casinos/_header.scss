@@ -1,0 +1,251 @@
+.header {
+	position: relative;
+	z-index: 50;
+	&::before {
+		content: "";
+		width: 100%;
+		height: 77px;
+		background-color: #fff;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 3;
+	}
+	/* .header__container */
+	&__container {
+		position: relative;
+		z-index: 4;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		min-height: 77px;
+	}
+	/* .header__logo */
+	&__logo {
+		@media (max-width: 424px) {
+			flex: 0 0 32px;
+			overflow: hidden;
+		}
+	}
+	/* .header__buttons */
+	&__buttons {
+		display: flex;
+		align-items: center;
+		gap: 60px;
+		@media (max-width: 920px) {
+			gap: 40px;
+		}
+		@media (max-width: 767px) {
+			gap: 20px;
+			justify-content: flex-end;
+		}
+	}
+	/* .header__menu */
+	&__menu {
+		@media (max-width: 767px) {
+			position: fixed;
+			left: 0;
+			top: -100%;
+			width: 100%;
+			background-color: #18191F; 
+			padding: 30px 16px;
+			overflow: auto;
+			transition: 0.5s ease 0s;
+		}
+		&.active {
+			top: 77px;
+			transition: 0.5s ease 0s;
+		}
+	}
+	/* .header__list */
+	&__list {
+		z-index: 5;
+		display: flex;
+		align-items: center;
+		gap: 35px;
+		& > li.list>a {
+			margin-right: 18px;
+			@media (max-width: 767px) {
+				margin-right: 0;
+				
+			}
+		}
+		& > li.list {
+			position: relative;
+
+			@media (max-width: 767px) {
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+				&.open {
+					display: grid;
+					grid-template-rows: auto 1fr;
+					grid-template-columns: 1fr 1fr;
+					grid-area: column-end;
+				}
+				&.open>a {
+					//flex: 0 0 auto;
+				}
+				&.open>span {
+					//flex: 0 0 auto;
+					justify-self: end;
+				}
+				&.open>ul{
+
+				}
+			}
+		}
+		@media (max-width: 920px) {
+			gap: 20px;
+		}
+		@media (max-width: 767px) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+	/* .header__link */
+	&__link {
+		font-weight: 500;
+		line-height: 150%;
+		white-space: nowrap;
+		text-transform: uppercase;
+		
+		&:hover {
+			color: #4559F7;
+			transition: 0.3s ease 0s;
+		}
+		@media (max-width: 767px) {
+			color: #fff;
+		}
+	}
+	&__arrow {
+  position: absolute;
+  top: 8px;
+  right: 0;
+  @media (max-width: 767px) {
+  	position: relative;
+  }
+  &.open {
+  	transform: rotate(180deg);
+  }
+	}
+	&__sub-menu-list {
+			display: block;
+			position: absolute;
+			top: -250px;
+			left: 0;
+			transition: .3s ease 0s top;
+
+			@media (max-width: 767px) {
+				display: none;
+				position: relative;
+			}
+
+		&.active {
+			top: 27px;
+			@media (max-width: 767px) {
+				top: 0;
+				display: block;
+			}
+		}
+	}
+	&__burger {
+		display: none;
+		@media (max-width: 767px) {
+			display: block;
+			width: 16.33px;
+			height: 11px;
+			position: relative;
+			z-index: 5;
+
+			& span {
+				position: absolute;
+				left: 0;
+				top: 4.5px;
+				border: 1.5px solid #18191F;
+				width: 16.33px;
+			}
+			&:before,&:after {
+				content: "";
+				position: absolute;
+				left: 0;
+				width: 16.33px;
+				border: 1.5px solid #18191F;
+				height: 0;
+				transition: 0.3s ease 0s;
+			}
+			&:before {
+				top: 0;
+			}
+			&:after {
+				bottom: 0;
+			}
+			&.active:before {
+				transform: matrix(0.71, 0.7, -0.72, 0.71, 0, 0);
+				top: 50%;
+				transition: 0.3s ease 0s;
+			}
+			&.active:after {
+				transform: matrix(0.71, -0.7, 0.72, 0.71, 0, 0);
+				top: 50%;
+				transition: 0.3s ease 0s;
+			}
+			&.active span {
+				display: none;
+			}
+		}
+	}
+	/* .header__language */
+	&__language {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		& span {
+			line-height: 140%;
+		}
+		@media (max-width: 424px) {
+			flex: 0 0 30px;
+			overflow: hidden;
+		}
+		&.active {
+			display: none;
+		}
+	}
+}
+
+.arrow {
+	width: 0;
+  height: 0;
+  border-top: 5px solid #121212;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+
+  @media (max-width: 767px) {
+  	border-top: 10px solid #fff;
+  }
+}
+.sub-menu {
+padding-top: 20px;
+
+	&__box {
+		background-color: #18191F;
+		padding: 20px;
+		@media (max-width: 767px) {
+			padding: 0;
+		}
+		&>li:not(:last-child) {
+			margin-bottom: 8px;
+		}
+	}
+	&__link {
+		white-space: nowrap;
+		font-size: 16px;
+		line-height: 140%;
+		color: #fff;
+		&:hover {
+			color: #4559F7;
+			text-decoration: underline;
+			transition: .4s;
+		}
+	}
+}

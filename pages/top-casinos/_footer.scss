@@ -1,0 +1,160 @@
+.footer {
+	background-color:#18191F;
+	padding: 50px 20px;
+	position: relative;
+	z-index: 50;
+
+	&__container {
+		display: flex;
+
+		@media (max-width: 419px) {
+			flex-direction: column;
+		}
+	}
+
+	&__columns {
+		flex: 1 1 63%;
+		display: flex;
+
+		@media (max-width: 992px) {
+			flex-wrap: wrap;
+		}
+
+		@media (max-width: 419px) {
+			margin-bottom: 50px;
+		}
+	}
+
+	&__box {
+		@media (max-width: 992px) {
+			flex: 1 1 50%;
+		}
+
+		@media (max-width: 767px) {
+			flex: 1 1 100%;
+		}
+
+		&:not(:last-child) {
+			margin-right: 82px;
+
+			@media (max-width: 1200px) {
+				margin-right: 60px;
+			}
+
+			@media (max-width: 992px) {
+				margin: 0 0 25px 0;
+			}
+
+			@media (max-width: 419px) {
+				margin-bottom: 40px;
+			}
+		}
+	}
+
+	&__content {
+		flex: 1 1 37%;
+	}
+}
+.box-footer {
+
+	&__title {
+		color:  #fff;
+		font-size: 14px;
+		text-transform: uppercase;
+		margin-bottom: 16px;
+		line-height: 21px;
+		position: relative;
+		font-weight: 500;
+
+		&::after {
+		position: absolute;
+		bottom: -14px;
+		content: '';
+		display: block;
+		height: 1px;
+		width: 130px;
+		background-color: #606060;
+		margin-bottom: 8px;
+	}
+}
+
+	&__list {
+	}
+
+	&__item {
+		color:  #fff;
+		font-size: 14px;
+
+		&:hover {
+			color: $hover-color;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 8px;
+		}
+	}
+}
+.content-footer {
+	display: flex;
+	flex-direction: column;
+
+	&__links {
+		margin-bottom: 40px;
+
+		@media (max-width: 992px) {
+			margin-bottom: 25px;
+		}
+
+		@media (max-width: 419px) {
+			margin-bottom: 50px;
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__link {
+		color: #fff;
+		white-space: nowrap;
+		margin-bottom: 10px;
+
+		&:hover {
+			color: $hover-color;
+		}
+
+		&:not(:last-child) {
+			margin-right: 20px;
+		}
+	}
+
+	&__logo {
+	}
+
+	&__text {
+		color: #fff;
+		line-height: 22.4px;
+	}
+}
+.logo-footer {
+	margin-bottom: 20px;
+
+	@media (max-width: 419px) {
+		margin-bottom: 50px;
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+	}
+	&__image {}
+
+	&__title {
+		margin-left: 15px;
+		color: #fff;
+		font-size: 20px;
+		font-weight: 500;
+		line-height: 26px;
+	}
+}

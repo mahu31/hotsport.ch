@@ -1,0 +1,168 @@
+// Getting initial styles
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&display=swap');
+
+$hover-color: #4559F7;
+$total-black-color: #18191F;
+$purple-color: #DB46B1;
+$hover-btn-color: #A708A7;
+
+@import "../top-casinos/_initial-styles";
+@import "../top-casinos/_header";
+@import "../top-casinos/_footer";
+
+html,
+body {
+  height: 100%;
+  font-size: 14px;
+  color: #18191F;
+  font-family: 'Karla';
+
+  .body_active {
+  	overflow: hidden;
+  }
+}
+
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+ }
+
+ [class*="__container"] {
+	max-width: 1310px;
+	margin: 0 auto;
+	padding: 0 15px;
+ }
+
+//  Page
+
+.page {
+	padding: 135px 0;
+	background-color: #f9f9f9;
+
+	@media (max-width: 992px) {
+		padding: 92px 0;
+	}
+
+	@media (max-width: 600px) {
+		padding: 40px 0;
+	}
+
+	&_active {
+		position: relative;
+	}
+
+	&_active::before {
+		content: "";
+		position: absolute;
+		z-index: 5;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.5);
+		left: 0;
+		top: 0;
+  }
+
+	&__main {
+	}
+}
+.main {
+
+	&__registation {
+	}
+}
+.registation {
+	padding: 25px;
+	border: 1px solid #E2E2E2;
+	background-color: #fff;
+	border-radius: 8px;
+	width: 40%;
+	margin: 0 auto;
+
+	@media (max-width: 992px) {
+		width: 60%;
+	}
+
+	@media (max-width: 600px) {
+		padding: 0 15px;
+		width: 100%;
+		background-color: transparent;
+		border: none;
+	}
+
+	&__title {
+		line-height: 130%;
+		font-size: 32px;
+		font-weight: 700;
+		text-align: center;
+		margin-bottom: 20px;
+
+		@media (max-width: 600px) {
+			font-size: 28px;
+		}
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__input {
+		flex: 1 1 100%;
+		padding: 10px;
+		width: 100%;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		font-size: 16px;
+		box-sizing: border-box;
+
+		&:focus {
+			outline: none;
+			border-color: #6cb2eb;
+			box-shadow: 0 0 5px rgba(108, 178, 235, 0.5);
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 15px;	
+		}
+
+		&:last-child {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__btn {
+			padding: 15px 50px;
+			border: 1px solid #DB46B1;
+			border-radius: 8px;
+			font-weight: 700;
+			font-size: 16px;
+			line-height: 140%;
+			text-align: center;
+			background-color: #fff;
+			width: 50%;
+			margin: 0 auto;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			&:hover {
+				border: 1px solid #ccc;
+				color: #fff;
+				background-color: $hover-btn-color;
+			}
+
+			@media (max-width: 600px) {
+				background-color: $hover-btn-color;
+				color: #fff;
+				width: 70%;
+			}
+		}
+
+	&__login {
+	}
+
+	&__link {
+	}
+}
